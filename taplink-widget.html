@@ -1,0 +1,249 @@
+<!-- TapLink Виджет -->
+<div class="taplink_widget_root" style="position: fixed; right: 35px; bottom: 35px;">
+  <!-- Кнопка -->
+  <div class="taplink_pulse_button" id="toggle-button" role="button" aria-expanded="false"
+       style="width: 58px; height: 58px; background: #f78d4d; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 9999; box-sizing: border-box;">
+    <!-- Обёртка для иконок -->
+    <div class="taplink_icon_wrapper"
+         style="width: 32px; height: 32px; position: relative; transition: opacity 0.3s ease; overflow: hidden;">
+      <!-- Иконка Чат -->
+      <svg class="taplink_icon_open" viewBox="144 144 512 512" width="32" height="32"
+           style="fill: #fff; transition: opacity 0.3s ease; position: absolute; top: 0; left: 0; opacity: 1; z-index: 1;">
+        <path d="m547.95 401.79c0 4.0391-1.6055 7.9141-4.4609 10.77-2.8555 2.8555-6.7266 4.4609-10.766 4.4648h-217.78c-5.375-0.10156-10.297-3.0273-12.957-7.6992-2.6562-4.6719-2.6562-10.402 0-15.074 2.6602-4.6719 7.582-7.5977 12.957-7.6992h217.78c4.0391 0 7.9141 1.6094 10.773 4.4648 2.8555 2.8594 4.4609 6.7344 4.4609 10.773zm0 70.121c0 4.0391-1.6055 7.9141-4.4609 10.773-2.8555 2.8555-6.7266 4.4609-10.766 4.4688h-217.78c-5.375-0.10156-10.297-3.0273-12.957-7.7031-2.6562-4.6719-2.6562-10.398 0-15.07 2.6602-4.6719 7.582-7.5977 12.957-7.6992h217.78c4.0391 0 7.9141 1.6055 10.77 4.4609 2.8555 2.8594 4.4609 6.7305 4.4648 10.77zm-248.24-140.25c0-4.043 1.6055-7.918 4.4648-10.777 2.8555-2.8555 6.7344-4.4609 10.773-4.457h142.21c5.375 0.10156 10.301 3.0273 12.961 7.6992 2.6562 4.6719 2.6562 10.402 0 15.074-2.6602 4.6719-7.5859 7.5977-12.961 7.6992h-142.21c-4.0391 0-7.9141-1.6055-10.773-4.4648-2.8555-2.8555-4.4609-6.7344-4.457-10.773zm254.14 201.44c35.059-35.07 56.062-81.762 59.047-131.26 2.9844-49.496-12.258-98.375-42.852-137.4-30.59-39.027-74.414-65.5-123.19-74.422-48.777-8.9219-99.133 0.32422-141.56 25.992-42.426 25.672-73.984 65.988-88.715 113.34s-11.613 98.453 8.7617 143.66c1.4453 3.2031 1.7383 6.8047 0.82812 10.199l-33.168 123.79 123.79-33.172v0.003907c3.3945-0.91016 6.9961-0.61719 10.199 0.82812 37.594 16.766 79.379 21.77 119.87 14.355 40.488-7.418 77.785-26.91 107-55.91zm-143.46-376.88c-51.57 0.007812-101.68 17.086-142.52 48.578-40.836 31.488-70.098 75.613-83.215 125.48-13.117 49.871-9.3516 102.68 10.707 150.19l-38.598 144.12c-1.3984 5.25 0.10547 10.848 3.9453 14.691 3.8438 3.8398 9.4414 5.3477 14.691 3.9492l144.1-38.621-0.003906 0.003907c42.613 18.02 89.617 22.973 135.05 14.223 45.434-8.7461 87.238-30.793 120.11-63.348 32.875-32.555 55.332-74.145 64.523-119.48 9.1914-45.344 4.6992-92.395-12.902-135.18-17.602-42.785-47.523-79.375-85.961-105.12-38.441-25.746-83.664-39.488-129.93-39.484z" fill-rule="evenodd"/>
+      </svg>
+
+      <!-- Иконка Закрыть -->
+      <svg class="taplink_icon_close" viewBox="144 144 512 512" width="32" height="32"
+           style="fill: #fff; transition: opacity 0.3s ease; position: absolute; top: 0; left: 0; opacity: 0; z-index: 0;">
+        <path d="m561.72 234.25c-44.336-44.336-103.79-69.023-166.76-69.023-62.977 0-122.43 24.688-166.76 69.023-44.336 44.336-69.023 103.79-69.023 166.76 0 62.977 24.688 122.43 69.023 166.76 44.336 44.336 103.79 69.023 166.76 69.023 62.977 0 122.43-24.688 166.76-69.023 92.195-91.695 92.195-241.33 0-333.52zm-10.582 322.94c-41.816 41.816-97.234 64.488-156.18 64.488-58.945 0-114.36-23.176-156.18-64.488-86.152-86.152-86.152-226.21 0-312.36 41.812-41.312 97.234-64.488 156.18-64.488 58.945 0 114.36 23.176 156.18 64.488 86.152 86.152 86.152 226.21 0 312.36z"/>
+        <path d="m476.07 306.79-82.121 82.625-82.625-82.625-10.582 11.086 82.121 82.121-82.121 82.625 10.582 10.578 82.625-82.625 82.121 82.625 10.578-10.578-82.121-82.625 82.121-82.121z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Панель контактов -->
+  <div id="chat-panel" class="taplink_chat_panel taplink_panel_closed">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/79226171211  " target="_blank" rel="noopener nofollow"
+       style="text-decoration: none;">
+      <div class="contact-icon contact-whatsapp" data-order="1">
+        <svg viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+        </svg>
+      </div>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/apple  " target="_blank" rel="noopener nofollow"
+       style="text-decoration: none;">
+      <div class="contact-icon contact-instagram" data-order="2">
+        <svg viewBox="0 0 448 512">
+          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+        </svg>
+      </div>
+    </a>
+
+    <!-- Telegram -->
+    <a href="https://t.me/username  " target="_blank" rel="noopener nofollow"
+       style="text-decoration: none;">
+      <div class="contact-icon contact-telegram" data-order="3">
+        <svg viewBox="0 0 496 512">
+          <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zm115 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"></path>
+        </svg>
+      </div>
+    </a>
+
+    <!-- Телефон -->
+    <a href="tel:79226171211" style="text-decoration: none;">
+      <div class="contact-icon contact-phone" data-order="4">
+        <svg viewBox="0 0 512 512">
+          <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24.29 24.29 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
+        </svg>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Стили -->
+<style>
+  /* Анимация пульса вокруг кнопки */
+  .taplink_pulse_button::before,
+  .taplink_pulse_button::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border: 4px solid #f78d4d;
+    border-radius: 50%;
+    animation: pulseanim 3s linear infinite;
+  }
+
+  .taplink_pulse_button::after {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes pulseanim {
+    0% { transform: scale(0.7); opacity: 1; }
+    50% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.3); opacity: 0; }
+  }
+
+  /* Панель контактов */
+  .taplink_chat_panel {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+    align-items: center;
+    z-index: 9998;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .taplink_panel_open {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .taplink_panel_closed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .contact-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .contact-icon.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Цвета для каждой кнопки */
+  .contact-whatsapp {
+    background-color: #25D366;
+  }
+
+  .contact-instagram {
+    background: linear-gradient(to right, #f09433, #e6683c, #dd3d36, #cd2f71, #bc2a90);
+  }
+
+  .contact-telegram {
+    background-color: #26A5E4;
+  }
+
+  .contact-phone {
+    background-color: #4A4A4A;
+  }
+
+  /* Принудительная окраска всех SVG внутри .contact-icon */
+  .contact-icon svg {
+    fill: #fff !important;
+    width: 27px;
+    height: 27px;
+  }
+
+  /* Корректировка иконок в кнопке */
+  .taplink_icon_wrapper {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
+
+  .taplink_icon_open,
+  .taplink_icon_close {
+    fill: #fff;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+  }
+
+  .taplink_icon_open {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .taplink_icon_close {
+    opacity: 0;
+    z-index: 0;
+  }
+</style>
+
+<!-- JS -->
+<script>
+  window.addEventListener('load', () => {
+    const icon = document.getElementById('toggle-button');
+    const panel = document.getElementById('chat-panel');
+    const contactIcons = document.querySelectorAll('.contact-icon');
+
+    if (!icon || !panel) {
+      console.error("Элементы не найдены");
+      return;
+    }
+
+    let isOpen = false;
+
+    icon.addEventListener('click', () => {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        panel.classList.remove('taplink_panel_closed');
+        panel.classList.add('taplink_panel_open');
+        contactIcons.forEach((el, i) => setTimeout(() => el.classList.add('show'), i * 100));
+      } else {
+        contactIcons.forEach((el, i) => setTimeout(() => el.classList.remove('show'), i * 50));
+        setTimeout(() => {
+          panel.classList.remove('taplink_panel_open');
+          panel.classList.add('taplink_panel_closed');
+        }, contactIcons.length * 50 + 50);
+      }
+
+      // Переключение иконок
+      const openIcon = icon.querySelector('.taplink_icon_open');
+      const closeIcon = icon.querySelector('.taplink_icon_close');
+      if (openIcon && closeIcon) {
+        openIcon.style.opacity = isOpen ? '0' : '1';
+        closeIcon.style.opacity = isOpen ? '1' : '0';
+      }
+    });
+
+    // Закрытие при клике вне области
+    document.addEventListener('click', (event) => {
+      const isInside = icon.contains(event.target) || [...contactIcons].some(el => el.contains(event.target));
+      if (!isInside && isOpen) {
+        isOpen = false;
+        contactIcons.forEach((el, i) => setTimeout(() => el.classList.remove('show'), i * 50));
+        setTimeout(() => {
+          panel.classList.remove('taplink_panel_open');
+          panel.classList.add('taplink_panel_closed');
+        }, contactIcons.length * 50 + 50);
+
+        const openIcon = icon.querySelector('.taplink_icon_open');
+        const closeIcon = icon.querySelector('.taplink_icon_close');
+        if (openIcon && closeIcon) {
+          openIcon.style.opacity = '1';
+          closeIcon.style.opacity = '0';
+        }
+      }
+    });
+  });
+</script>
